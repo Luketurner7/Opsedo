@@ -96,10 +96,7 @@
       padding: 2rem;
       border-radius: 16px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-      transition: transform 0.3s ease, max-height 0.4s ease;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
+      transition: transform 0.3s;
     }
 
     .card:hover {
@@ -113,21 +110,6 @@
 
     .card p {
       color: #cbd5e0;
-      margin: 0;
-    }
-
-    .expandable-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      color: #cbd5e0;
-      margin-top: 1rem;
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-
-    .card.expanded .expandable-content {
-      max-height: 300px;
     }
 
     .form-section {
@@ -196,46 +178,22 @@
       <div class="card">
         <h4>Smart Workflow Automation</h4>
         <p>Replace repetitive tasks with seamless automated workflows — from payment follow-ups to internal approvals.</p>
-        <div class="expandable-content">
-          <p>Automating workflows saves time and reduces errors. We design customized automations tailored to your business tools, enabling faster approvals, timely payment reminders, and better operational efficiency.</p>
-          <p>This means your team focuses on what matters most while Opsedo handles the routine tasks behind the scenes.</p>
-        </div>
       </div>
-
       <div class="card">
         <h4>Revenue & Cost Dashboards</h4>
         <p>Custom dashboards built from your existing data — no code required. Know your numbers at a glance.</p>
-        <div class="expandable-content">
-          <p>Our dashboards aggregate your financial data into intuitive visuals, enabling real-time monitoring of revenue streams, costs, and profitability.</p>
-          <p>This clarity allows for faster decision-making and highlights opportunities for growth and savings.</p>
-        </div>
       </div>
-
       <div class="card">
         <h4>AI-Powered Financial Modelling</h4>
         <p>Forecast cashflows, sales or project costs using intuitive Excel-first models enhanced with smart backend logic.</p>
-        <div class="expandable-content">
-          <p>We build financial models powered by AI to give you accurate forecasts tailored to your business cycles.</p>
-          <p>These models help you prepare for the future, manage cash flow, and optimize project budgets with confidence.</p>
-        </div>
       </div>
-
       <div class="card">
         <h4>Macro & Sector Insights</h4>
         <p>Get concise, data-driven research on the latest economic and industry trends — tailored for your business.</p>
-        <div class="expandable-content">
-          <p>Stay ahead of market shifts with timely reports on economic conditions and sector-specific trends.</p>
-          <p>Our insights help you anticipate risks and seize opportunities relevant to your business landscape.</p>
-        </div>
       </div>
-
       <div class="card">
         <h4>Custom Integrations</h4>
         <p>Connect your CRM, payroll, and other tools with easy-to-maintain automations built using secure, scalable tools.</p>
-        <div class="expandable-content">
-          <p>We integrate your existing software systems into unified workflows, eliminating data silos and boosting operational efficiency.</p>
-          <p>Whether it’s syncing customer info or automating payroll processing, we create solutions that grow with your business.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -243,4 +201,25 @@
   <section class="section" id="about">
     <h3>Our Vision</h3>
     <p style="max-width: 800px; margin: 0 auto; color: #cbd5e0;">
-      Modern businesses are drowning in admin. We believe automation shouldn’
+      Modern businesses are drowning in admin. We believe automation shouldn’t be reserved for enterprise giants. Opsedo helps lean teams move faster by applying intelligent workflows, smart analysis and frictionless digital solutions — without the need for developers or expensive software.
+    </p>
+  </section>
+
+  <section class="form-section" id="contact">
+    <h3>Book Your Free Consultation</h3>
+    <form name="consultation" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="consultation">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="company" placeholder="Company Name">
+      <textarea name="goals" placeholder="Tell us about what you'd like to improve or automate..." rows="5" required></textarea>
+      <button type="submit">Submit Request</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Opsedo. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
