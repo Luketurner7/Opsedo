@@ -1,240 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Opsedo - Smart Automation for SMEs</title>
-<style>
-  /* Base styles kept from your original */
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    background: #f7f9fc;
-    color: #111;
-  }
-  header {
-    background: #1e1e2f;
-    color: #fff;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  header h1 {
-    margin: 0;
-    font-weight: 900;
-    font-size: 2.8rem;
-  }
-  header p {
-    margin-top: 0.5rem;
-    font-size: 1.25rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 400;
-  }
-  /* Subtle tech background shapes */
-  header::before {
-    content: "";
-    position: absolute;
-    top: -40px;
-    left: -40px;
-    width: 150px;
-    height: 150px;
-    background: #4f46e5;
-    opacity: 0.2;
-    border-radius: 50%;
-    filter: blur(60px);
-    z-index: 0;
-  }
-  header::after {
-    content: "";
-    position: absolute;
-    bottom: -60px;
-    right: -60px;
-    width: 200px;
-    height: 200px;
-    background: #22d3ee;
-    opacity: 0.15;
-    border-radius: 50%;
-    filter: blur(80px);
-    z-index: 0;
-  }
-  main {
-    padding: 2rem 1.5rem;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-  section {
-    margin-bottom: 3rem;
-  }
-  h2 {
-    font-weight: 700;
-    font-size: 2rem;
-    color: #1e1e2f;
-    margin-bottom: 1rem;
-    border-bottom: 3px solid #4f46e5;
-    display: inline-block;
-    padding-bottom: 0.25rem;
-  }
-  /* Partner logos strip */
-  .partners {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin: 2rem 0;
-  }
-  .partners img {
-    max-height: 40px;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-  }
-  .partners img:hover {
-    opacity: 1;
-  }
-  /* Services list with icons */
-  ul.services-list {
-    list-style: none;
-    padding-left: 0;
-  }
-  ul.services-list li {
-    margin-bottom: 1.25rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    font-size: 1.1rem;
-  }
-  ul.services-list li svg {
-    flex-shrink: 0;
-    width: 24px;
-    height: 24px;
-    fill: #4f46e5;
-    margin-top: 4px;
-  }
-  /* Buttons with hover */
-  button, input[type="submit"] {
-    background-color: #4f46e5;
-    border: none;
-    color: white;
-    padding: 0.75rem 2rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  button:hover, input[type="submit"]:hover {
-    background-color: #3730a3;
-  }
-  /* Form styling */
-  form {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-  }
-  form input, form textarea, form select {
-    width: 100%;
-    padding: 0.6rem;
-    margin-bottom: 1.25rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-family: inherit;
-  }
-  form textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opsedo | Intelligent Automation for SMEs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #0f0f1a, #1c1c2e);
+      color: #ffffff;
+    }
+
+    header {
+      background: #0d0d19;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #2e2e4a;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #ffffff;
+    }
+
+    nav a {
+      color: #a0aec0;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #63b3ed;
+    }
+
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: #cbd5e0;
+    }
+
+    .btn {
+      background: #3182ce;
+      padding: 0.75rem 1.5rem;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #2b6cb0;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: #111122;
+    }
+
+    .section h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #1a1a2e;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h4 {
+      color: #63b3ed;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      color: #cbd5e0;
+      margin: 0;
+    }
+
+    .expandable-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      color: #cbd5e0;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .card.expanded .expandable-content {
+      max-height: 300px; /* adjust as needed */
+    }
+
+    .form-section {
+      background: #0d0d19;
+      padding: 4rem 2rem;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: #2d3748;
+      color: white;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #3182ce;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #718096;
+      background: #0b0b14;
+    }
+  </style>
 </head>
+
 <body>
+  <header>
+    <h1>Opsedo</h1>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">Vision</a>
+      <a href="#contact">Consultation</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>Opsedo</h1>
-  <p>Smart Automation Solutions Helping SMEs Streamline Operations and Boost Cashflow</p>
-</header>
+  <section class="hero">
+    <h2>Automate Smarter. Operate Better.</h2>
+    <p>
+      Opsedo empowers small and mid-sized businesses with modern automation tools
+      to eliminate manual tasks, cut costs, and improve performance — without needing an IT team.
+    </p>
+    <a class="btn" href="#contact">Book Free Consultation</a>
+  </section>
 
-<main>
+  <section class="section" id="services">
+    <h3>Our Services</h3>
+    <div class="cards">
+      <div class="card" onclick="toggleExpand(this)">
+        <h4>Smart Workflow Automation</h4>
+        <p>Replace repetitive tasks with seamless automated workflows — from payment follow-ups to internal approvals.</p>
+        <div class="expandable-content">
+          <p>Automating workflows saves time and reduces errors. We design customized automations tailored to your business tools, enabling faster approvals, timely payment reminders, and better operational efficiency.</p>
+          <p>This means your team focuses on what matters most while Opsedo handles the routine tasks behind the scenes.</p>
+        </div>
+      </div>
 
-  <section>
-    <h2>Trusted by Innovative SMEs</h2>
-    <div class="partners">
-      <!-- Placeholder logos, replace with real ones -->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Google_Logo.svg" alt="Partner Logo Google" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Partner Logo Apple" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Partner Logo Facebook" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Microsoft_logo_-_2012.svg" alt="Partner Logo Microsoft" />
+      <div class="card" onclick="toggleExpand(this)">
+        <h4>Revenue & Cost Dashboards</h4>
+        <p>Custom dashboards built from your existing data — no code required. Know your numbers at a glance.</p>
+        <div class="expandable-content">
+          <p>Our dashboards aggregate your financial data into intuitive visuals, enabling real-time monitoring of revenue streams, costs, and profitability.</p>
+          <p>This clarity allows for faster decision-making and highlights opportunities for growth and savings.</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleExpand(this)">
+        <h4>AI-Powered Financial Modelling</h4>
+        <p>Forecast cashflows, sales or project costs using intuitive Excel-first models enhanced with smart backend logic.</p>
+        <div class="expandable-content">
+          <p>We build financial models powered by AI to give you accurate forecasts tailored to your business cycles.</p>
+          <p>These models help you prepare for the future, manage cash flow, and optimize project budgets with confidence.</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleExpand(this)">
+        <h4>Macro & Sector Insights</h4>
+        <p>Get concise, data-driven research on the latest economic and industry trends — tailored for your business.</p>
+        <div class="expandable-content">
+          <p>Stay ahead of market shifts with timely reports on economic conditions and sector-specific trends.</p>
+          <p>Our insights help you anticipate risks and seize opportunities relevant to your business landscape.</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleExpand(this)">
+        <h4>Custom Integrations</h4>
+        <p>Connect your CRM, payroll, and other tools with easy-to-maintain automations built using secure, scalable tools.</p>
+        <div class="expandable-content">
+          <p>We integrate your existing software systems into unified workflows, eliminating data silos and boosting operational efficiency.</p>
+          <p>Whether it’s syncing customer info or automating payroll processing, we create solutions that grow with your business.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>Our Services</h2>
-    <ul class="services-list">
-      <li>
-        <svg viewBox="0 0 24 24"><path d="M12 2L3 7v13h18V7l-9-5zM9 20v-6h6v6H9z"/></svg>
-        <strong>Automated Payment Follow-ups:</strong> Reduce late payments with personalized, automated reminders.
-      </li>
-      <li>
-        <svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 8h14v-2H7v2zm0-4h14v-2H7v2zm0-6v2h14V7H7z"/></svg>
-        <strong>Data & Insights Dashboards:</strong> Gain actionable insights on sales, costs, and cash flow.
-      </li>
-      <li>
-        <svg viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
-        <strong>Revenue & Cost Forecasting:</strong> Make better decisions with easy-to-use predictive models.
-      </li>
-      <li>
-        <svg viewBox="0 0 24 24"><path d="M10 9h4v6h-4z"/></svg>
-        <strong>Customer Relationship Automation:</strong> Automate follow-ups, feedback collection, and CRM tasks.
-      </li>
-      <li>
-        <svg viewBox="0 0 24 24"><path d="M21 11h-8V3H7v8H3v10h18V11z"/></svg>
-        <strong>Custom Workflow Automation:</strong> Streamline repetitive tasks tailored to your business needs.
-      </li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Why Opsedo?</h2>
-    <p>
-      Small and medium-sized businesses often struggle with managing time-consuming, repetitive tasks, missing payments, and lacking actionable insights that could drive growth.
-      Opsedo offers a suite of intelligent automation tools designed specifically for SMEs — enabling you to save time, reduce costs, and improve cash flow without needing a dedicated IT team.
-    </p>
-    <p>
-      By combining economic expertise with cutting-edge automation technology, we help you turn your business operations into efficient, data-driven processes.
+  <section class="section" id="about">
+    <h3>Our Vision</h3>
+    <p style="max-width: 800px; margin: 0 auto; color: #cbd5e0;">
+      Modern businesses are drowning in admin. We believe automation shouldn’t be reserved for enterprise giants. Opsedo helps lean teams move faster by applying intelligent workflows, smart analysis and frictionless digital solutions — without the need for developers or expensive software.
     </p>
   </section>
 
-  <section>
-    <h2>Get a Free Consultation</h2>
-    <form id="consultationForm" method="POST" action="YOUR_FORM_HANDLER_URL">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" />
-
-      <label for="business">Business Name</label>
-      <input type="text" id="business" name="business" required />
-
-      <label for="industry">Industry</label>
-      <input type="text" id="industry" name="industry" />
-
-      <label for="needs">What challenges would you like to solve?</label>
-      <textarea id="needs" name="needs" placeholder="E.g., late payments, workflow automation, data insights" required></textarea>
-
-      <input type="submit" value="Request Consultation" />
-    </form>
-  </section>
-
-</main>
-
-</body>
-</html>
+  <section class="form-section" id="contact">
+    <h3>Book Your Free Consultation</h3>
+    <form name="consultation" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="consultation">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="company" placeholder="Company Name">
+      <textarea
