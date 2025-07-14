@@ -223,21 +223,22 @@
     </p>
   </section>
 
-  <!-- Contact Form -->
-  <section id="contact" class="form-section">
-    <h2 style="font-size: 2rem; margin-bottom: 20px; color: #ffffff;">Contact Us</h2>
-    <form id="contact-form" onsubmit="submitForm(event)">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required rows="5"></textarea>
-      <button type="submit">Send Message</button>
-      <div id="form-response"></div>
-    </form>
-  </section>
-
-  <footer>
-    &copy; 2025 Opsedo. All rights reserved.
-  </footer>
+ <!-- Contact Form -->
+<section id="contact" class="form-section" style="text-align: center; background: #0d0d19; padding: 4rem 2rem;">
+  <h2 style="font-size: 2rem; margin-bottom: 20px; color: #ffffff;">Contact Us</h2>
+  <form id="contact-form" style="max-width: 500px; margin: auto;" onsubmit="submitForm(event)">
+    <input type="text" name="name" placeholder="Your Name" required
+      style="background: #2d3748; color: #fff; border: none; border-radius: 8px; padding: 12px; margin: 10px 0; width: 100%;" />
+    <input type="email" name="email" placeholder="Your Email" required
+      style="background: #2d3748; color: #fff; border: none; border-radius: 8px; padding: 12px; margin: 10px 0; width: 100%;" />
+    <textarea name="message" placeholder="Your Message" required rows="5"
+      style="background: #2d3748; color: #fff; border: none; border-radius: 8px; padding: 12px; margin: 10px 0; width: 100%;"></textarea>
+    <button type="submit"
+      style="background: #3182ce; color: white; border: none; border-radius: 8px; padding: 14px 28px; cursor: pointer;">
+      Send Message
+    </button>
+    <div id="form-response" style="margin-top: 20px; font-weight: bold;"></div>
+  </form>
 
   <script>
     async function submitForm(event) {
@@ -266,6 +267,4 @@
       }
     }
   </script>
-</body>
-
-</html>
+</section>
