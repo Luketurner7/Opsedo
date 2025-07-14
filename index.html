@@ -205,14 +205,14 @@
     </p>
   </section>
 
- <!-- Contact Form -->
-<section id="contact" style="padding: 60px 20px; background: #ffffff; text-align: center; font-family: sans-serif;">
-  <h2 style="font-size: 2rem; margin-bottom: 20px;">Contact Us</h2>
+<!-- Contact Form -->
+<section id="contact" class="form-section" style="text-align: center;">
+  <h2 style="font-size: 2rem; margin-bottom: 20px; color: #ffffff;">Contact Us</h2>
   <form id="contact-form" style="max-width: 500px; margin: auto;" onsubmit="submitForm(event)">
-    <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc;" />
-    <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc;" />
-    <textarea name="message" placeholder="Your Message" required rows="5" style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc;"></textarea>
-    <button type="submit" style="background: black; color: white; border: none; padding: 14px 28px; border-radius: 8px; cursor: pointer;">Send Message</button>
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" required rows="5"></textarea>
+    <button type="submit">Send Message</button>
     <div id="form-response" style="margin-top: 20px; font-weight: bold;"></div>
   </form>
 
@@ -232,17 +232,15 @@
         if (res.ok) {
           form.reset();
           responseBox.textContent = "✅ Message sent! We'll get back to you shortly.";
-          responseBox.style.color = "green";
+          responseBox.style.color = "lightgreen";
         } else {
           responseBox.textContent = "⚠️ Something went wrong. Please try again.";
-          responseBox.style.color = "red";
+          responseBox.style.color = "tomato";
         }
       } catch (err) {
         responseBox.textContent = "❌ Network error. Please try again.";
-        responseBox.style.color = "red";
+        responseBox.style.color = "tomato";
       }
     }
   </script>
 </section>
-
-</html>
