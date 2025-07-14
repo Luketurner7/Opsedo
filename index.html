@@ -3,41 +3,42 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Opsedo | Intelligent Automation for SMEs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(145deg, #0f0f1a, #1c1c2e);
-      color: #ffffff;
+      background: #2C3E50;
+      color: #ECF0F1;
     }
 
     header {
-      background: #0d0d19;
+      background: #34495E;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #2e2e4a;
+      border-bottom: 1px solid #22313F;
     }
 
     header h1 {
       margin: 0;
       font-size: 1.8rem;
-      color: #ffffff;
+      color: #ECF0F1;
     }
 
     nav a {
-      color: #a0aec0;
+      color: #BDC3C7;
       margin-left: 1.5rem;
       text-decoration: none;
       font-weight: 500;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #63b3ed;
+      color: #E67E22;
     }
 
     .hero {
@@ -47,7 +48,7 @@
 
     .hero h2 {
       font-size: 2.5rem;
-      color: #ffffff;
+      color: #ECF0F1;
       margin-bottom: 1rem;
     }
 
@@ -55,32 +56,34 @@
       font-size: 1.1rem;
       max-width: 700px;
       margin: 0 auto 2rem;
-      color: #cbd5e0;
+      color: #BDC3C7;
     }
 
     .btn {
-      background: #3182ce;
+      background: #E67E22;
       padding: 0.75rem 1.5rem;
       color: white;
       text-decoration: none;
       font-weight: 600;
       border-radius: 8px;
       transition: background 0.3s;
+      display: inline-block;
     }
 
     .btn:hover {
-      background: #2b6cb0;
+      background: #D35400;
     }
 
     .section {
       padding: 4rem 2rem;
       text-align: center;
-      background: #111122;
+      background: #34495E;
     }
 
     .section h3 {
       font-size: 2rem;
       margin-bottom: 1.5rem;
+      color: #ECF0F1;
     }
 
     .cards {
@@ -92,11 +95,12 @@
     }
 
     .card {
-      background: #1a1a2e;
+      background: #3B4A61;
       padding: 2rem;
       border-radius: 16px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
       transition: transform 0.3s;
+      color: #ECF0F1;
     }
 
     .card:hover {
@@ -104,18 +108,19 @@
     }
 
     .card h4 {
-      color: #63b3ed;
+      color: #E67E22;
       margin-bottom: 1rem;
     }
 
     .card p {
-      color: #cbd5e0;
+      color: #BDC3C7;
     }
 
     .form-section {
-      background: #0d0d19;
+      background: #22313F;
       padding: 4rem 2rem;
       text-align: center;
+      color: #ECF0F1;
     }
 
     form {
@@ -130,19 +135,19 @@
       margin-bottom: 1rem;
       border: none;
       border-radius: 8px;
-      background: #2d3748;
-      color: white;
+      background: #3B4A61;
+      color: #ECF0F1;
       font-size: 1rem;
       font-family: 'Inter', sans-serif;
     }
 
     input::placeholder,
     textarea::placeholder {
-      color: #a0aec0;
+      color: #BDC3C7;
     }
 
     button {
-      background: #3182ce;
+      background: #E67E22;
       color: white;
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
@@ -154,7 +159,7 @@
     }
 
     button:hover {
-      background: #2b6cb0;
+      background: #D35400;
     }
 
     #form-response {
@@ -165,8 +170,8 @@
     footer {
       text-align: center;
       padding: 2rem;
-      color: #718096;
-      background: #0b0b14;
+      color: #7F8C8D;
+      background: #1B2A38;
     }
   </style>
 </head>
@@ -218,58 +223,53 @@
 
   <section class="section" id="about">
     <h3>Our Vision</h3>
-    <p style="max-width: 800px; margin: 0 auto; color: #cbd5e0;">
+    <p style="max-width: 800px; margin: 0 auto; color: #BDC3C7;">
       Modern businesses are drowning in admin. We believe automation shouldn’t be reserved for enterprise giants. Opsedo helps lean teams move faster by applying intelligent workflows, smart analysis and frictionless digital solutions — without the need for developers or expensive software.
     </p>
   </section>
 
-.form-section {
-  background: #0d0d19;
-  padding: 4rem 2rem;
-  text-align: center;
-  color: #ffffff;
-}
+  <section id="contact" class="form-section">
+    <h2 style="font-size: 2rem; margin-bottom: 20px;">Contact Us</h2>
+    <form id="contact-form" onsubmit="submitForm(event)">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required rows="5"></textarea>
+      <button type="submit">Send Message</button>
+      <div id="form-response"></div>
+    </form>
 
-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
+    <script>
+      async function submitForm(event) {
+        event.preventDefault();
+        const form = document.getElementById('contact-form');
+        const formData = new FormData(form);
+        const responseBox = document.getElementById('form-response');
 
-input,
-textarea {
-  width: 100%;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border: none;
-  border-radius: 8px;
-  background: #2d3748;
-  color: white;
-  font-size: 1rem;
-  font-family: 'Inter', sans-serif;
-}
+        try {
+          const res = await fetch('https://hook.eu2.make.com/hfnadpp6shnr634iy0recmg01gdafbsx', {
+            method: 'POST',
+            body: formData
+          });
 
-input::placeholder,
-textarea::placeholder {
-  color: #a0aec0;  /* subtle placeholder color */
-}
+          if (res.ok) {
+            form.reset();
+            responseBox.textContent = "✅ Message sent! We'll get back to you shortly.";
+            responseBox.style.color = "lightgreen";
+          } else {
+            responseBox.textContent = "⚠️ Something went wrong. Please try again.";
+            responseBox.style.color = "tomato";
+          }
+        } catch (err) {
+          responseBox.textContent = "❌ Network error. Please try again.";
+          responseBox.style.color = "tomato";
+        }
+      }
+    </script>
+  </section>
 
-button {
-  background: #3182ce;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-family: 'Inter', sans-serif;
-  transition: background 0.3s;
-}
+  <footer>
+    &copy; 2025 Opsedo. All rights reserved.
+  </footer>
+</body>
 
-button:hover {
-  background: #2b6cb0;
-}
-
-#form-response {
-  margin-top: 20px;
-  font-weight: bold;
-}
+</html>
