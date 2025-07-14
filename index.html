@@ -3,188 +3,152 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Opsedo | Intelligent Automation for SMEs</title>
+<title>Opsedo - Smart Automation for SMEs</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+  /* Base styles kept from your original */
   body {
-    margin: 0; background: #0f111a; color: #e1e6f9;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #f7f9fc;
+    color: #111;
   }
   header {
-    position: relative;
-    background: linear-gradient(135deg, #1e2a78, #0f111a);
-    overflow: hidden;
-    padding: 4rem 2rem 6rem 2rem;
+    background: #1e1e2f;
+    color: #fff;
+    padding: 2rem 1.5rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
-  /* Animated geometric background circles */
-  header::before, header::after {
-    content: "";
-    position: absolute; border-radius: 50%;
-    opacity: 0.12;
-    animation: float 20s linear infinite;
-    filter: blur(40px);
+  header h1 {
+    margin: 0;
+    font-weight: 900;
+    font-size: 2.8rem;
   }
+  header p {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+  }
+  /* Subtle tech background shapes */
   header::before {
-    width: 250px; height: 250px; background: #3a4edc;
-    top: 10%; left: 15%;
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    width: 150px;
+    height: 150px;
+    background: #4f46e5;
+    opacity: 0.2;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: 0;
   }
   header::after {
-    width: 350px; height: 350px; background: #7b5fff;
-    bottom: 5%; right: 10%;
-    animation-duration: 30s;
-  }
-  @keyframes float {
-    0% { transform: translateY(0) translateX(0);}
-    50% { transform: translateY(-30px) translateX(20px);}
-    100% { transform: translateY(0) translateX(0);}
-  }
-
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 0.3rem;
-    font-weight: 700;
-    letter-spacing: 1.3px;
-    color: #c7d2fe;
-  }
-  p.lead {
-    font-size: 1.3rem;
-    max-width: 600px;
-    margin: 0 auto 3rem auto;
-    color: #a1a9c0;
+    content: "";
+    position: absolute;
+    bottom: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    background: #22d3ee;
+    opacity: 0.15;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
   }
   main {
-    max-width: 900px;
-    margin: -5rem auto 4rem auto;
-    background: #171a2b;
-    border-radius: 12px;
-    box-shadow: 0 12px 20px rgb(59 130 246 / 0.4);
-    padding: 3rem 2.5rem;
+    padding: 2rem 1.5rem;
+    max-width: 960px;
+    margin: 0 auto;
   }
-
   section {
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
   }
   h2 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #8ab4f8;
-    border-bottom: 2px solid #3a4edc;
-    padding-bottom: 0.5rem;
-    max-width: fit-content;
+    color: #1e1e2f;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #4f46e5;
+    display: inline-block;
+    padding-bottom: 0.25rem;
   }
+  /* Partner logos strip */
+  .partners {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+  .partners img {
+    max-height: 40px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+  .partners img:hover {
+    opacity: 1;
+  }
+  /* Services list with icons */
   ul.services-list {
     list-style: none;
-    padding: 0;
+    padding-left: 0;
   }
   ul.services-list li {
-    background: #252b48;
-    margin-bottom: 1rem;
-    padding: 1.25rem 1.5rem;
-    border-radius: 10px;
+    margin-bottom: 1.25rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
-    transition: background 0.3s ease;
-  }
-  ul.services-list li:hover {
-    background: #3a4edc;
-    cursor: pointer;
+    font-size: 1.1rem;
   }
   ul.services-list li svg {
     flex-shrink: 0;
-    width: 36px; height: 36px;
-    stroke: #c7d2fe;
-    stroke-width: 1.5;
-    fill: none;
+    width: 24px;
+    height: 24px;
+    fill: #4f46e5;
+    margin-top: 4px;
   }
-  ul.services-list li:hover svg {
-    stroke: #fff;
-  }
-  ul.services-list li div {
-    flex: 1;
-  }
-  ul.services-list li strong {
-    display: block;
-    font-size: 1.1rem;
-    margin-bottom: 0.3rem;
-  }
-  ul.services-list li p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #bbc5f1;
-  }
-
-  /* Section dividers with angled shape */
-  section + section {
-    position: relative;
-  }
-  section + section::before {
-    content: "";
-    position: absolute;
-    top: -45px;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: linear-gradient(135deg, #171a2b 50%, #0f111a 50%);
-    clip-path: polygon(0 100%, 100% 0, 100% 100%, 0% 100%);
-    z-index: 1;
-  }
-
-  form {
-    background: #1f2341;
-    padding: 2rem 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgb(59 130 246 / 0.35);
-  }
-  form h3 {
-    margin-top: 0; margin-bottom: 1.25rem;
-    font-weight: 600;
-    font-size: 1.6rem;
-    color: #8ab4f8;
-  }
-  label {
-    display: block;
-    margin-bottom: 0.35rem;
-    font-weight: 500;
-    font-size: 0.9rem;
-    color: #c7d2fe;
-  }
-  input, textarea, select {
-    width: 100%;
-    padding: 0.5rem 0.75rem;
-    margin-bottom: 1.25rem;
-    border-radius: 8px;
+  /* Buttons with hover */
+  button, input[type="submit"] {
+    background-color: #4f46e5;
     border: none;
-    font-size: 1rem;
-    font-family: 'Inter', sans-serif;
-  }
-  input:focus, textarea:focus, select:focus {
-    outline: 2px solid #3a4edc;
-    background: #272e57;
-  }
-  button {
-    background: #3a4edc;
     color: white;
-    font-weight: 600;
+    padding: 0.75rem 2rem;
     font-size: 1.1rem;
-    border: none;
-    border-radius: 10px;
-    padding: 0.85rem 2.5rem;
+    font-weight: 600;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.25s ease;
+    transition: background-color 0.3s ease;
   }
-  button:hover {
-    background: #7b5fff;
+  button:hover, input[type="submit"]:hover {
+    background-color: #3730a3;
   }
-
-  footer {
-    text-align: center;
-    color: #555b7e;
-    padding: 2rem 1rem 1rem 1rem;
-    font-size: 0.9rem;
+  /* Form styling */
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  form input, form textarea, form select {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+  }
+  form textarea {
+    resize: vertical;
+    min-height: 120px;
   }
 </style>
 </head>
@@ -192,101 +156,85 @@
 
 <header>
   <h1>Opsedo</h1>
-  <p class="lead">Intelligent automation solutions tailored to help SMEs streamline operations, boost cashflow, and save time.</p>
+  <p>Smart Automation Solutions Helping SMEs Streamline Operations and Boost Cashflow</p>
 </header>
 
 <main>
-  <section id="services">
+
+  <section>
+    <h2>Trusted by Innovative SMEs</h2>
+    <div class="partners">
+      <!-- Placeholder logos, replace with real ones -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Google_Logo.svg" alt="Partner Logo Google" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Partner Logo Apple" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Partner Logo Facebook" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Microsoft_logo_-_2012.svg" alt="Partner Logo Microsoft" />
+    </div>
+  </section>
+
+  <section>
     <h2>Our Services</h2>
     <ul class="services-list">
       <li>
-        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <path d="M12 8v4l3 3"></path>
-        </svg>
-        <div>
-          <strong>Automated Invoice & Payment Follow-ups</strong>
-          <p>Ensure you never miss a payment with smart, timely automated reminders that keep cashflow healthy.</p>
-        </div>
+        <svg viewBox="0 0 24 24"><path d="M12 2L3 7v13h18V7l-9-5zM9 20v-6h6v6H9z"/></svg>
+        <strong>Automated Payment Follow-ups:</strong> Reduce late payments with personalized, automated reminders.
       </li>
       <li>
-        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="4" width="18" height="16" rx="2"></rect>
-          <path d="M8 2v4"></path>
-          <path d="M16 2v4"></path>
-          <path d="M3 10h18"></path>
-        </svg>
-        <div>
-          <strong>Financial & Operational Dashboards</strong>
-          <p>Dynamic, easy-to-understand dashboards that highlight key performance metrics and financial insights.</p>
-        </div>
+        <svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 8h14v-2H7v2zm0-4h14v-2H7v2zm0-6v2h14V7H7z"/></svg>
+        <strong>Data & Insights Dashboards:</strong> Gain actionable insights on sales, costs, and cash flow.
       </li>
       <li>
-        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 3v18"></path>
-          <path d="M5 12h14"></path>
-          <path d="M8 8h8"></path>
-        </svg>
-        <div>
-          <strong>Revenue & Expense Forecasting</strong>
-          <p>Data-driven forecasts using your historical data and economic trends to guide smart budgeting and planning.</p>
-        </div>
+        <svg viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+        <strong>Revenue & Cost Forecasting:</strong> Make better decisions with easy-to-use predictive models.
       </li>
       <li>
-        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 12h18"></path>
-          <path d="M12 3v18"></path>
-          <circle cx="12" cy="12" r="6"></circle>
-        </svg>
-        <div>
-          <strong>Custom Workflow Automations</strong>
-          <p>Tailored automations to reduce repetitive tasks, freeing up your team to focus on what matters most.</p>
-        </div>
+        <svg viewBox="0 0 24 24"><path d="M10 9h4v6h-4z"/></svg>
+        <strong>Customer Relationship Automation:</strong> Automate follow-ups, feedback collection, and CRM tasks.
       </li>
       <li>
-        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 12h16"></path>
-          <path d="M12 4v16"></path>
-          <circle cx="12" cy="12" r="2"></circle>
-        </svg>
-        <div>
-          <strong>Data Integration & Reporting</strong>
-          <p>Connect your existing tools and platforms for seamless data flow and actionable reports.</p>
-        </div>
+        <svg viewBox="0 0 24 24"><path d="M21 11h-8V3H7v8H3v10h18V11z"/></svg>
+        <strong>Custom Workflow Automation:</strong> Streamline repetitive tasks tailored to your business needs.
       </li>
     </ul>
   </section>
 
-  <section id="consultation">
-    <h2>Request a Free Consultation</h2>
-    <form>
-      <h3>Consultation Form</h3>
+  <section>
+    <h2>Why Opsedo?</h2>
+    <p>
+      Small and medium-sized businesses often struggle with managing time-consuming, repetitive tasks, missing payments, and lacking actionable insights that could drive growth.
+      Opsedo offers a suite of intelligent automation tools designed specifically for SMEs — enabling you to save time, reduce costs, and improve cash flow without needing a dedicated IT team.
+    </p>
+    <p>
+      By combining economic expertise with cutting-edge automation technology, we help you turn your business operations into efficient, data-driven processes.
+    </p>
+  </section>
+
+  <section>
+    <h2>Get a Free Consultation</h2>
+    <form id="consultationForm" method="POST" action="YOUR_FORM_HANDLER_URL">
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" required />
+
       <label for="email">Email Address</label>
       <input type="email" id="email" name="email" required />
-      <label for="company">Company Name</label>
-      <input type="text" id="company" name="company" />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" />
+
+      <label for="business">Business Name</label>
+      <input type="text" id="business" name="business" required />
+
       <label for="industry">Industry</label>
-      <select id="industry" name="industry">
-        <option value="" disabled selected>Select Industry</option>
-        <option value="retail">Retail</option>
-        <option value="financial">Financial Services</option>
-        <option value="charity">Charity/Non-Profit</option>
-        <option value="manufacturing">Manufacturing</option>
-        <option value="tech">Technology</option>
-        <option value="other">Other</option>
-      </select>
-      <label for="needs">Brief Description of Your Needs</label>
-      <textarea id="needs" name="needs" rows="4" placeholder="What do you want help with?" required></textarea>
-      <button type="submit">Submit</button>
+      <input type="text" id="industry" name="industry" />
+
+      <label for="needs">What challenges would you like to solve?</label>
+      <textarea id="needs" name="needs" placeholder="E.g., late payments, workflow automation, data insights" required></textarea>
+
+      <input type="submit" value="Request Consultation" />
     </form>
   </section>
-</main>
 
-<footer>
-  &copy; 2025 Opsedo. All rights reserved.
-</footer>
+</main>
 
 </body>
 </html>
