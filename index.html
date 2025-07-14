@@ -223,7 +223,6 @@
     </p>
   </section>
 
-<!-- Contact Form -->
 <section id="contact" class="form-section" style="text-align: center;">
   <h2 style="font-size: 2rem; margin-bottom: 20px; color: #ffffff;">Contact Us</h2>
   <form id="contact-form" style="max-width: 500px; margin: auto;" onsubmit="submitForm(event)">
@@ -250,6 +249,19 @@
         if (res.ok) {
           form.reset();
           responseBox.textContent = "✅ Message sent! We'll get back to you shortly.";
+          responseBox.style.color = "lightgreen";
+        } else {
+          responseBox.textContent = "⚠️ Something went wrong. Please try again.";
+          responseBox.style.color = "tomato";
+        }
+      } catch (err) {
+        responseBox.textContent = "❌ Network error. Please try again.";
+        responseBox.style.color = "tomato";
+      }
+    }
+  </script>
+</section>
+  responseBox.textContent = "✅ Message sent! We'll get back to you shortly.";
           responseBox.style.color = "lightgreen";
         } else {
           responseBox.textContent = "⚠️ Something went wrong. Please try again.";
