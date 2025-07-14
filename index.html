@@ -223,54 +223,53 @@
     </p>
   </section>
 
-<section id="contact" class="form-section" style="text-align: center;">
-  <h2 style="font-size: 2rem; margin-bottom: 20px; color: #ffffff;">Contact Us</h2>
-  <form id="contact-form" style="max-width: 500px; margin: auto;" onsubmit="submitForm(event)">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" placeholder="Your Message" required rows="5"></textarea>
-    <button type="submit">Send Message</button>
-    <div id="form-response" style="margin-top: 20px; font-weight: bold;"></div>
-  </form>
+.form-section {
+  background: #0d0d19;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #ffffff;
+}
 
-  <script>
-    async function submitForm(event) {
-      event.preventDefault();
-      const form = document.getElementById('contact-form');
-      const formData = new FormData(form);
-      const responseBox = document.getElementById('form-response');
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
 
-      try {
-        const res = await fetch('https://hook.eu2.make.com/hfnadpp6shnr634iy0recmg01gdafbsx', {
-          method: 'POST',
-          body: formData
-        });
+input,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #2d3748;
+  color: white;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+}
 
-        if (res.ok) {
-          form.reset();
-          responseBox.textContent = "✅ Message sent! We'll get back to you shortly.";
-          responseBox.style.color = "lightgreen";
-        } else {
-          responseBox.textContent = "⚠️ Something went wrong. Please try again.";
-          responseBox.style.color = "tomato";
-        }
-      } catch (err) {
-        responseBox.textContent = "❌ Network error. Please try again.";
-        responseBox.style.color = "tomato";
-      }
-    }
-  </script>
-</section>
-  responseBox.textContent = "✅ Message sent! We'll get back to you shortly.";
-          responseBox.style.color = "lightgreen";
-        } else {
-          responseBox.textContent = "⚠️ Something went wrong. Please try again.";
-          responseBox.style.color = "tomato";
-        }
-      } catch (err) {
-        responseBox.textContent = "❌ Network error. Please try again.";
-        responseBox.style.color = "tomato";
-      }
-    }
-  </script>
-</section>
+input::placeholder,
+textarea::placeholder {
+  color: #a0aec0;  /* subtle placeholder color */
+}
+
+button {
+  background: #3182ce;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #2b6cb0;
+}
+
+#form-response {
+  margin-top: 20px;
+  font-weight: bold;
+}
