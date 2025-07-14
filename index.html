@@ -205,21 +205,44 @@
     </p>
   </section>
 
-  <section class="form-section" id="contact">
-    <h3>Book Your Free Consultation</h3>
-    <form name="consultation" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="consultation">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="text" name="company" placeholder="Company Name">
-      <textarea name="goals" placeholder="Tell us about what you'd like to improve or automate..." rows="5" required></textarea>
-      <button type="submit">Submit Request</button>
-    </form>
-  </section>
+ <!-- Contact Form -->
+<section id="contact" style="padding: 60px 20px; background: #ffffff; text-align: center; font-family: sans-serif;">
+  <h2 style="font-size: 2rem; margin-bottom: 20px;">Contact Us</h2>
+  <form id="contact-form" style="max-width: 500px; margin: auto;" onsubmit="submitForm(event)">
+    <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc;" />
+    <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc;" />
+    <textarea name="message" placeholder="Your Message" required rows="5" style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc;"></textarea>
+    <button type="submit" style="background: black; color: white; border: none; padding: 14px 28px; border-radius: 8px; cursor: pointer;">Send Message</button>
+    <div id="form-response" style="margin-top: 20px; font-weight: bold;"></div>
+  </form>
 
-  <footer>
-    <p>&copy; 2025 Opsedo. All rights reserved.</p>
-  </footer>
-</body>
+  <script>
+    async function submitForm(event) {
+      event.preventDefault();
+      const form = document.getElementById('contact-form');
+      const formData = new FormData(form);
+      const responseBox = document.getElementById('form-response');
+
+      try {
+        const res = await fetch('https://hook.eu2.make.com/hfnadpp6shnr634iy0recmg01gdafbsx', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (res.ok) {
+          form.reset();
+          responseBox.textContent = "✅ Message sent! We'll get back to you shortly.";
+          responseBox.style.color = "green";
+        } else {
+          responseBox.textContent = "⚠️ Something went wrong. Please try again.";
+          responseBox.style.color = "red";
+        }
+      } catch (err) {
+        responseBox.textContent = "❌ Network error. Please try again.";
+        responseBox.style.color = "red";
+      }
+    }
+  </script>
+</section>
 
 </html>
