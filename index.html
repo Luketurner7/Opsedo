@@ -1,275 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Opsedo | Intelligent Automation for SMEs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #2C3E50;
-      color: #ECF0F1;
+    :root {
+      --accent: #007BFF;
+      --bg: #f9fafb;
+      --text: #333;
+      --card-bg: #ffffff;
+      --card-shadow: rgba(0,0,0,0.1);
     }
-
-    header {
-      background: #34495E;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #22313F;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-      color: #ECF0F1;
-    }
-
-    nav a {
-      color: #BDC3C7;
-      margin-left: 1.5rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #E67E22;
-    }
-
-    .hero {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 2.5rem;
-      color: #ECF0F1;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      color: #BDC3C7;
-    }
-
-    .btn {
-      background: #E67E22;
-      padding: 0.75rem 1.5rem;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 8px;
-      transition: background 0.3s;
-      display: inline-block;
-    }
-
-    .btn:hover {
-      background: #D35400;
-    }
-
-    .section {
-      padding: 4rem 2rem;
-      text-align: center;
-      background: #34495E;
-    }
-
-    .section h3 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: #ECF0F1;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background: #3B4A61;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-      transition: transform 0.3s;
-      color: #ECF0F1;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h4 {
-      color: #E67E22;
-      margin-bottom: 1rem;
-    }
-
-    .card p {
-      color: #BDC3C7;
-    }
-
-    .form-section {
-      background: #22313F;
-      padding: 4rem 2rem;
-      text-align: center;
-      color: #ECF0F1;
-    }
-
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 8px;
-      background: #3B4A61;
-      color: #ECF0F1;
-      font-size: 1rem;
-      font-family: 'Inter', sans-serif;
-    }
-
-    input::placeholder,
-    textarea::placeholder {
-      color: #BDC3C7;
-    }
-
-    button {
-      background: #E67E22;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: #D35400;
-    }
-
-    #form-response {
-      margin-top: 20px;
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #7F8C8D;
-      background: #1B2A38;
-    }
+    body { margin:0; font-family:Inter,sans-serif; background:var(--bg); color:var(--text); }
+    header { background:#fff; padding:1rem 2rem; box-shadow:0 2px 4px rgba(0,0,0,0.05); display:flex; justify-content:space-between; align-items:center; }
+    header h1{ margin:0; font-size:1.8rem; color:var(--accent);}
+    nav a{ margin-left:1.5rem; text-decoration:none; color:var(--text); font-weight:500; }
+    nav a:hover{ color:var(--accent); }
+    .hero { text-align:center; padding:4rem 2rem; }
+    .hero h2{ font-size:2.5rem; margin-bottom:1rem; color:var(--text);}
+    .hero p{ font-size:1.1rem; max-width:700px; margin:0 auto 2rem; color:#555; }
+    .btn { background:var(--accent); color:#fff; padding:0.75rem 1.5rem; font-weight:600; border-radius:6px; text-decoration:none; transition:background .3s;}
+    .btn:hover{ background:darken(var(--accent),10%); }
+    .section{ padding:4rem 2rem; text-align:center; }
+    .section h3{ font-size:2rem; margin-bottom:1.5rem; color:var(--text); }
+    .cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; max-width:1000px; margin:0 auto;}
+    .card{ background:var(--card-bg); padding:2rem; border-radius:12px; box-shadow:0 4px 16px var(--card-shadow); }
+    .card h4{ margin-bottom:1rem; color:var(--accent); }
+    .card p{ color:#555; }
+    .form-section{ background:#fff; padding:4rem 2rem; }
+    form{ max-width:600px; margin:0 auto; text-align:left; }
+    input,textarea{ width:100%; padding:1rem; margin-bottom:1rem; border:1px solid #ccc; border-radius:8px; font-size:1rem; }
+    textarea{ resize:vertical; }
+    button{ background:var(--accent); color:#fff; padding:0.75rem 1.5rem; font-size:1rem; border:none; border-radius:6px; cursor:pointer; }
+    button:hover{ background:darken(var(--accent),10%); }
+    footer{ text-align:center; padding:2rem; color:#777; background:#f1f3f5; }
   </style>
 </head>
-
 <body>
-  <header>
-    <h1>Opsedo</h1>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">Vision</a>
-      <a href="#contact">Consultation</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h2>Automate Smarter. Operate Better.</h2>
-    <p>
-      Opsedo empowers small and mid-sized businesses with modern automation tools
-      to eliminate manual tasks, cut costs, and improve performance — without needing an IT team.
-    </p>
-    <a class="btn" href="#contact">Book Free Consultation</a>
-  </section>
+<header>
+  <h1>Opsedo</h1>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#about">Vision</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section class="section" id="services">
-    <h3>Our Services</h3>
-    <div class="cards">
-      <div class="card">
-        <h4>Smart Workflow Automation</h4>
-        <p>Replace repetitive tasks with seamless automated workflows — from payment follow-ups to internal approvals.</p>
-      </div>
-      <div class="card">
-        <h4>Revenue & Cost Dashboards</h4>
-        <p>Custom dashboards built from your existing data — no code required. Know your numbers at a glance.</p>
-      </div>
-      <div class="card">
-        <h4>AI-Powered Financial Modelling</h4>
-        <p>Forecast cashflows, sales or project costs using intuitive Excel-first models enhanced with smart backend logic.</p>
-      </div>
-      <div class="card">
-        <h4>Macro & Sector Insights</h4>
-        <p>Get concise, data-driven research on the latest economic and industry trends — tailored for your business.</p>
-      </div>
-      <div class="card">
-        <h4>Custom Integrations</h4>
-        <p>Connect your CRM, payroll, and other tools with easy-to-maintain automations built using secure, scalable tools.</p>
-      </div>
+<section class="hero">
+  <h2>Intelligent Automation for SMEs</h2>
+  <p>Cut repetitive tasks. Unlock performance. All without heavy IT support.</p>
+  <a class="btn" href="#contact">Book a Free Consultation</a>
+</section>
+
+<section id="services" class="section">
+  <h3>Our Services</h3>
+  <div class="cards">
+    <div class="card">
+      <h4>Workflow Automation</h4>
+      <p>Automate payment follow‑ups, approvals, and internal workflows seamlessly.</p>
     </div>
-  </section>
+    <div class="card">
+      <h4>Financial Dashboards</h4>
+      <p>Turn your existing data into visual dashboards — no code needed.</p>
+    </div>
+    <div class="card">
+      <h4>AI Modelling</h4>
+      <p>Forecast using smart Excel-linked models and backend logic.</p>
+    </div>
+    <div class="card">
+      <h4>Sector Intelligence</h4>
+      <p>Receive custom research on market and economic trends for smarter decisions.</p>
+    </div>
+  </div>
+</section>
 
-  <section class="section" id="about">
-    <h3>Our Vision</h3>
-    <p style="max-width: 800px; margin: 0 auto; color: #BDC3C7;">
-      Modern businesses are drowning in admin. We believe automation shouldn’t be reserved for enterprise giants. Opsedo helps lean teams move faster by applying intelligent workflows, smart analysis and frictionless digital solutions — without the need for developers or expensive software.
-    </p>
-  </section>
+<section id="about" class="section" style="background:#eef2f7;">
+  <h3>Our Vision</h3>
+  <p style="max-width:800px; margin:0 auto; color:#555;">We believe automation should be accessible for lean teams. Opsedo brings intelligent workflows and analysis to businesses without needing developers.</p>
+</section>
 
-  <section id="contact" class="form-section">
-    <h2 style="font-size: 2rem; margin-bottom: 20px;">Contact Us</h2>
-    <form id="contact-form" onsubmit="submitForm(event)">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required rows="5"></textarea>
-      <button type="submit">Send Message</button>
-      <div id="form-response"></div>
-    </form>
+<section id="contact" class="form-section">
+  <h3>Contact Us</h3>
+  <form id="contact-form" onsubmit="submitForm(event)">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" required rows="5"></textarea>
+    <button type="submit">Send Message</button>
+    <div id="form-response" style="font-weight:bold;"></div>
+  </form>
+</section>
 
-    <script>
-      async function submitForm(event) {
-        event.preventDefault();
-        const form = document.getElementById('contact-form');
-        const formData = new FormData(form);
-        const responseBox = document.getElementById('form-response');
+<footer>
+  &copy; 2025 Opsedo. All rights reserved.
+</footer>
 
-        try {
-          const res = await fetch('https://hook.eu2.make.com/hfnadpp6shnr634iy0recmg01gdafbsx', {
-            method: 'POST',
-            body: formData
-          });
+<script>
+  async function submitForm(e){
+    e.preventDefault();
+    const res = await fetch('https://hook.eu2.make.com/hfnadpp6shnr634iy0recmg01gdafbsx',{
+      method:'POST', body: new FormData(e.target)
+    });
+    const box = document.getElementById('form-response');
+    if(res.ok){ e.target.reset(); box.textContent="✅ Message sent!"; box.style.color="green"; }
+    else{ box.textContent="⚠️ Something went wrong."; box.style.color="red"; }
+  }
+</script>
 
-          if (res.ok) {
-            form.reset();
-            responseBox.textContent = "✅ Message sent! We'll get back to you shortly.";
-            responseBox.style.color = "lightgreen";
-          } else {
-            responseBox.textContent = "⚠️ Something went wrong. Please try again.";
-            responseBox.style.color = "tomato";
-          }
-        } catch (err) {
-          responseBox.textContent = "❌ Network error. Please try again.";
-          responseBox.style.color = "tomato";
-        }
-      }
-    </script>
-  </section>
-
-  <footer>
-    &copy; 2025 Opsedo. All rights reserved.
-  </footer>
 </body>
-
 </html>
