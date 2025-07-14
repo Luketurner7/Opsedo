@@ -1,208 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Opsedo – Automate. Optimise. Grow.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #0e76fd;
-      --dark: #0d1117;
-      --light: #f5f7fa;
-      --gray: #a1a1aa;
-      --radius: 12px;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-    }
-    body {
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-    }
-    header {
-      background: var(--dark);
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: var(--gray);
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background: white;
-      padding: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    nav a {
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 600;
-    }
-    section {
-      padding: 3rem 1rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .hero {
-      text-align: center;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .services, .about, .contact {
-      background: white;
-      border-radius: var(--radius);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      padding: 2rem;
-      margin-top: 2rem;
-    }
-    .services h3, .about h3, .contact h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: var(--light);
-      border: 1px solid #e2e8f0;
-      border-radius: var(--radius);
-      padding: 1.5rem;
-    }
-    .card h4 {
-      margin-bottom: 0.5rem;
-      color: var(--primary);
-    }
-    .form-group {
-      margin-bottom: 1rem;
-    }
-    .form-group label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    .form-group input, .form-group textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border-radius: var(--radius);
-      border: 1px solid #ccc;
-    }
-    button {
-      background: var(--primary);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: var(--radius);
-      font-weight: 600;
-      cursor: pointer;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      color: var(--gray);
-      font-size: 0.9rem;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Opsedo | Intelligent Automation for SMEs</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+  body {
+    margin: 0; background: #0f111a; color: #e1e6f9;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+  header {
+    position: relative;
+    background: linear-gradient(135deg, #1e2a78, #0f111a);
+    overflow: hidden;
+    padding: 4rem 2rem 6rem 2rem;
+    text-align: center;
+  }
+  /* Animated geometric background circles */
+  header::before, header::after {
+    content: "";
+    position: absolute; border-radius: 50%;
+    opacity: 0.12;
+    animation: float 20s linear infinite;
+    filter: blur(40px);
+  }
+  header::before {
+    width: 250px; height: 250px; background: #3a4edc;
+    top: 10%; left: 15%;
+  }
+  header::after {
+    width: 350px; height: 350px; background: #7b5fff;
+    bottom: 5%; right: 10%;
+    animation-duration: 30s;
+  }
+  @keyframes float {
+    0% { transform: translateY(0) translateX(0);}
+    50% { transform: translateY(-30px) translateX(20px);}
+    100% { transform: translateY(0) translateX(0);}
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    color: #c7d2fe;
+  }
+  p.lead {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    color: #a1a9c0;
+  }
+  main {
+    max-width: 900px;
+    margin: -5rem auto 4rem auto;
+    background: #171a2b;
+    border-radius: 12px;
+    box-shadow: 0 12px 20px rgb(59 130 246 / 0.4);
+    padding: 3rem 2.5rem;
+  }
+
+  section {
+    margin-bottom: 3.5rem;
+  }
+  h2 {
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #8ab4f8;
+    border-bottom: 2px solid #3a4edc;
+    padding-bottom: 0.5rem;
+    max-width: fit-content;
+  }
+  ul.services-list {
+    list-style: none;
+    padding: 0;
+  }
+  ul.services-list li {
+    background: #252b48;
+    margin-bottom: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: background 0.3s ease;
+  }
+  ul.services-list li:hover {
+    background: #3a4edc;
+    cursor: pointer;
+  }
+  ul.services-list li svg {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    stroke: #c7d2fe;
+    stroke-width: 1.5;
+    fill: none;
+  }
+  ul.services-list li:hover svg {
+    stroke: #fff;
+  }
+  ul.services-list li div {
+    flex: 1;
+  }
+  ul.services-list li strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+  ul.services-list li p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #bbc5f1;
+  }
+
+  /* Section dividers with angled shape */
+  section + section {
+    position: relative;
+  }
+  section + section::before {
+    content: "";
+    position: absolute;
+    top: -45px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(135deg, #171a2b 50%, #0f111a 50%);
+    clip-path: polygon(0 100%, 100% 0, 100% 100%, 0% 100%);
+    z-index: 1;
+  }
+
+  form {
+    background: #1f2341;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgb(59 130 246 / 0.35);
+  }
+  form h3 {
+    margin-top: 0; margin-bottom: 1.25rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #8ab4f8;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #c7d2fe;
+  }
+  input, textarea, select {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 1.25rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+  }
+  input:focus, textarea:focus, select:focus {
+    outline: 2px solid #3a4edc;
+    background: #272e57;
+  }
+  button {
+    background: #3a4edc;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    padding: 0.85rem 2.5rem;
+    cursor: pointer;
+    transition: background 0.25s ease;
+  }
+  button:hover {
+    background: #7b5fff;
+  }
+
+  footer {
+    text-align: center;
+    color: #555b7e;
+    padding: 2rem 1rem 1rem 1rem;
+    font-size: 0.9rem;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Opsedo</h1>
-    <p>Automation, Intelligence & Insight for Ambitious SMEs</p>
-  </header>
 
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Consultation</a>
-  </nav>
+<header>
+  <h1>Opsedo</h1>
+  <p class="lead">Intelligent automation solutions tailored to help SMEs streamline operations, boost cashflow, and save time.</p>
+</header>
 
-  <section class="hero">
-    <h2>SMEs lose billions in productivity due to outdated workflows, late payments, and manual analysis</h2>
-    <p>Opsedo solves this with tailored automations, economic forecasting tools, and data-driven optimisation – without the enterprise price tag.</p>
+<main>
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul class="services-list">
+      <li>
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 8v4l3 3"></path>
+        </svg>
+        <div>
+          <strong>Automated Invoice & Payment Follow-ups</strong>
+          <p>Ensure you never miss a payment with smart, timely automated reminders that keep cashflow healthy.</p>
+        </div>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+          <path d="M8 2v4"></path>
+          <path d="M16 2v4"></path>
+          <path d="M3 10h18"></path>
+        </svg>
+        <div>
+          <strong>Financial & Operational Dashboards</strong>
+          <p>Dynamic, easy-to-understand dashboards that highlight key performance metrics and financial insights.</p>
+        </div>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v18"></path>
+          <path d="M5 12h14"></path>
+          <path d="M8 8h8"></path>
+        </svg>
+        <div>
+          <strong>Revenue & Expense Forecasting</strong>
+          <p>Data-driven forecasts using your historical data and economic trends to guide smart budgeting and planning.</p>
+        </div>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12h18"></path>
+          <path d="M12 3v18"></path>
+          <circle cx="12" cy="12" r="6"></circle>
+        </svg>
+        <div>
+          <strong>Custom Workflow Automations</strong>
+          <p>Tailored automations to reduce repetitive tasks, freeing up your team to focus on what matters most.</p>
+        </div>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 12h16"></path>
+          <path d="M12 4v16"></path>
+          <circle cx="12" cy="12" r="2"></circle>
+        </svg>
+        <div>
+          <strong>Data Integration & Reporting</strong>
+          <p>Connect your existing tools and platforms for seamless data flow and actionable reports.</p>
+        </div>
+      </li>
+    </ul>
   </section>
 
-  <section class="services" id="services">
-    <h3>Our Services</h3>
-    <div class="cards">
-      <div class="card">
-        <h4>Payment Chasing Automations</h4>
-        <p>Late payments cost UK SMEs £23.4bn annually. We build custom automations to follow up, escalate, and manage cash flow predictively.</p>
-      </div>
-      <div class="card">
-        <h4>Smart Revenue Forecasting</h4>
-        <p>Powered by real economic models, we help you forecast turnover under different scenarios — from market shocks to seasonal variation.</p>
-      </div>
-      <div class="card">
-        <h4>Wage & Cost Trend Dashboards</h4>
-        <p>Track labour and input cost pressures. Stay ahead of inflation, wage trends, and price dynamics to protect your margins.</p>
-      </div>
-      <div class="card">
-        <h4>Lead & Workflow Automation</h4>
-        <p>Turn repeatable tasks into smooth workflows — from CRM follow-ups to onboarding sequences — with no code required on your side.</p>
-      </div>
-      <div class="card">
-        <h4>Custom Data Solutions</h4>
-        <p>Need something unique? We combine economics, code, and business logic to build tailored reporting or analysis tools.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="about" id="about">
-    <h3>About Opsedo</h3>
-    <p>We're an Essex-based economic technology firm combining automation engineering and applied econometrics. Our team includes economists experienced in forecasting and optimisation, and developers who turn logic into scalable tools.</p>
-    <p>Unlike generic software consultants, we understand the data *and* the decision-making. That’s how we build solutions that genuinely save time and grow revenue.</p>
-  </section>
-
-  <section class="contact" id="contact">
-    <h3>Book a Free Consultation</h3>
-    <form name="contact" method="POST" data-netlify="true">
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-      </div>
-      <div class="form-group">
-        <label for="company">Company Name</label>
-        <input type="text" id="company" name="company" />
-      </div>
-      <div class="form-group">
-        <label for="services">Which services are you interested in?</label>
-        <textarea id="services" name="services" rows="3"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="details">Tell us more about what you'd like to solve</label>
-        <textarea id="details" name="details" rows="4"></textarea>
-      </div>
-      <button type="submit">Request Consultation</button>
+  <section id="consultation">
+    <h2>Request a Free Consultation</h2>
+    <form>
+      <h3>Consultation Form</h3>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
+      <label for="company">Company Name</label>
+      <input type="text" id="company" name="company" />
+      <label for="industry">Industry</label>
+      <select id="industry" name="industry">
+        <option value="" disabled selected>Select Industry</option>
+        <option value="retail">Retail</option>
+        <option value="financial">Financial Services</option>
+        <option value="charity">Charity/Non-Profit</option>
+        <option value="manufacturing">Manufacturing</option>
+        <option value="tech">Technology</option>
+        <option value="other">Other</option>
+      </select>
+      <label for="needs">Brief Description of Your Needs</label>
+      <textarea id="needs" name="needs" rows="4" placeholder="What do you want help with?" required></textarea>
+      <button type="submit">Submit</button>
     </form>
   </section>
+</main>
 
-  <footer>
-    &copy; 2025 Opsedo Ltd. All rights reserved.
-  </footer>
+<footer>
+  &copy; 2025 Opsedo. All rights reserved.
+</footer>
+
 </body>
 </html>
